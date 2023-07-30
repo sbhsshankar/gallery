@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/09a85ebd29.js" crossorigin="anonymous"></script>
+    <title>Image gallery</title>
+</head>
+<body>
+    <div class="gallery-wrap">
+    <i class="fa-solid fa-caret-left" id="back-btn"></i>
+    <div class="gallery">
+        <div>
+            <span><img src="./images/IMG-20230717-WA0001.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0002.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0003.jpg"></span>
+        </div>
+        <div>
+            <span><img src="./images/IMG-20230717-WA0004.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0005.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0006.jpg"></span>
+        </div>
+        <div>
+            <span><img src="./images/IMG-20230717-WA0007.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0008.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0009.jpg"></span>
+        </div>
+        <div>
+            <span><img src="./images/IMG-20230717-WA0010.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0011.jpg"></span>
+            <span><img src="./images/IMG-20230717-WA0012.jpg"></span>
+        </div>
+    </div>
+    <i class="fa-solid fa-caret-right" id="front-btn"></i>
+    </div>
+    
+
+    <script>
+
+        let scrollContainer = document.querySelector(".gallery");
+        let backBtn = document.getElementById("back-btn");
+        let frontBtn = document.getElementById("front-btn");
+
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehaviour = "auto";
+        })
+
+        frontBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft += 900;
+        })
+
+        backBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        })
+
+
+    </script>
+</body>
+</html>
